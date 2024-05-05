@@ -1,0 +1,101 @@
+.form-deliver {
+    padding: 5%;
+    margin: 2%;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .form-group-deliver {
+    margin: 10px 0px;
+  }
+  
+  .form-group-deliver--half {
+    display: inline-grid;
+    /* width: calc(50% - 10px); */
+    width: calc(50% - 0px);
+    margin: 0px 0px;
+  }
+  
+  .form-group-deliver--submit {
+    display: flex;
+    justify-content: flex-end;
+    align-self: center;
+    padding: 2%;
+    height: 50px;
+  }
+  
+  button {
+    background-color: #866831;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+  
+  .select-field {
+    width: 100%;
+    height: 45px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  
+  .input-field {
+    width: 100%;
+    height: 45px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+  .input-field:hover{
+    border: solid 1px #000;
+  }
+  
+  .input-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+  .phone-input {
+    display: flex;
+    gap:10px
+  }
+  
+  .country-code-dropdown {
+    width: 20% !important ;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: inherit;
+  }
+
+  .error {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .input-field.error {
+    border-color: red;
+  }
+  
+  .select-field.error {
+    border-color: red;
+    color: #000;
+  }
+  /* 
+  @media (min-width: 620px) {
+    
+  } */
+  
+  @media (min-width: 768px) {
+  }
+  
+  @media (min-width: 1200px) {
+  }
+  
