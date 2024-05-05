@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import style from "./FAQ.module.css";
-import Footer from "../Footer/Footer";
 
 const FAQ = ({ faqs }) => {
   const [expandedSections, setExpandedSections] = useState({});
@@ -17,11 +16,11 @@ const FAQ = ({ faqs }) => {
       <div className={style["faqs-container"]}>
         <hr className={style["faqs-separator"]} />
         <div className={style["faqs-title"]}>
-          <h3 className={style["faqs-title"]}>FAQs for Buying</h3>
+          <h3 className={style["faqs-title"]}>{faqs.title}</h3>
           <h3 className={style["faqs-title"]}>x</h3>
         </div>
         <hr className={style["faqs-separator"]} />
-        {faqs.map((faq, index) => (
+        {faqs.questions.map((faq, index) => (
           <div key={index} className={style["faq-section"]}>
             <button
               className={style["faq-toggle"]}

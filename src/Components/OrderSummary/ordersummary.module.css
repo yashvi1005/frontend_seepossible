@@ -17,6 +17,8 @@ a {
 @media screen and (min-width: 961px) {
   .orderSummary {
     width: 33%;
+    /* position: sticky;
+    top: 0; */
     /* height: auto;
     max-height: 372px !important; */
   }
@@ -41,9 +43,10 @@ a {
   flex-direction: column;
   gap: 10px;
   margin: 0 0 20px 0;
-  z-index: 1;
   height: auto;
   max-height: 350px;
+  position: sticky;
+  top: 0;
 }
 .item-box {
   border: solid 1px #e8e8e8;

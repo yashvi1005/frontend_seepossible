@@ -43,11 +43,6 @@ const Form2 = () => {
     }
   };
 
-  // if (!email) {
-  //   const prevEmail = sessionStorage.getItem("email");
-  //   console.log(49, prevEmail)
-  //   setEmail(prevEmail ?? null);
-  // }
   useEffect(() => {
     const prevEmail = sessionStorage.getItem("email");
     setEmail(prevEmail ?? null);
@@ -56,15 +51,14 @@ const Form2 = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-      <div className="form-heading">
-          <h3 style={{marginBlockEnd:"auto"}}>Contact Information</h3>
+        <div className="form-heading">
+          <h3 style={{ marginBlockEnd: "auto" }}>Contact Information</h3>
           <h5 className="login-link">
             Have an account? <a href="#">Login</a>
           </h5>
         </div>
         <div className="form-deliver">
           <input
-            // title={"Email Address"}
             type="email"
             className={`input-field ${errors.email ? "error" : ""}`}
             placeholder="Email"
@@ -119,7 +113,6 @@ const Form2 = () => {
                 +1
               </option>
               <option value="+44">+44</option>
-              {/* Add more options as needed */}
             </select>
             <input
               type="number"
@@ -133,7 +126,9 @@ const Form2 = () => {
               }}
             />
           </div>
-            {errors.phoneNumber && <div className="error">{errors.phoneNumber}</div>}
+          {errors.phoneNumber && (
+            <div className="error">{errors.phoneNumber}</div>
+          )}
         </div>
         <div className="form-group-pickup form-group-pickup--submit">
           <button type="submit">Continue to store selection</button>

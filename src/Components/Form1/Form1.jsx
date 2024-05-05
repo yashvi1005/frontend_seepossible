@@ -73,11 +73,6 @@ const Form1 = () => {
     }
   };
 
-  // if (!email) {
-  //   const prevEmail = sessionStorage.getItem("email");
-  //   setEmail(prevEmail ?? "");
-  // }
-
   useEffect(() => {
     const prevEmail = sessionStorage.getItem("email");
     setEmail(prevEmail ?? null);
@@ -86,12 +81,12 @@ const Form1 = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-heading">
-          <h3 style={{marginBlockEnd:"auto"}}>Contact Information</h3>
+          <h3 style={{ marginBlockEnd: "auto" }}>Contact Information</h3>
           <h5 className="login-link">
-            Have an account? <a  href="#">Login</a>
+            Have an account? <a href="#">Login</a>
           </h5>
         </div>
-        
+
         <div className="form-deliver">
           <input
             type="text"

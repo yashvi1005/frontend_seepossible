@@ -46,18 +46,6 @@ button {
   cursor: pointer;
   /* padding: 10px 20px; */
 }
-
-/* .select-field {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #fff;
-    box-sizing: border-box;
-  } */
-/* 
-  .input-field,
-  .select-field, */
 button {
   width: 100%;
   padding: 10px;
@@ -84,17 +72,6 @@ button {
 }
 
 @media (min-width: 768px) {
-  /* .form-group-pickup {
-      margin-bottom: 30px;
-    } */
-
-  .input-field,
-  .select-field {
-    /* width: calc(50% - 10px); */
-    /* width: calc(100% - 0px); */
-    /* margin-right: 10px; */
-  }
-
   .button {
     width: auto;
   }

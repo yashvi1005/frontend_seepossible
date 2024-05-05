@@ -3,7 +3,6 @@ import Header from "./Components/Header/Header";
 import OrderSummary from "./Components/OrderSummary/OrderSummary";
 import style from "./App.module.css";
 import { useEffect, useState } from "react";
-import Sticky from "react-sticky-el";
 import { ReactComponent as Delivery } from "./Assets/icons/delivery.svg";
 import { ReactComponent as Pickup } from "./Assets/icons/pickup.svg";
 import Form1 from "./Components/Form1/Form1";
@@ -12,57 +11,48 @@ import FAQ from "./Components/FAQ/FAQ";
 import Footer from "./Components/Footer/Footer";
 
 function App() {
+
+  // ------------------------------------- state initiliztion -------------------------------------
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 961);
   const [activeTab, setActiveTab] = useState(1);
-  const [chatWidth, setChatWidth] = useState(null);
-  const [sidebarTop, setSidebarTop] = useState(null);
 
-  const faqs = [
-    {
-      question: "Question 1",
-      answer:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
-    },
-    {
-      question: "Question 2",
-      answer:
-        'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.',
-    },
-  ];
+  const faqsForDelivery = {
+    title: "FAQs for Buying",
+    questions: [
+      {
+        question: "Question 1 [Buying]",
+        answer:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      },
+      {
+        question: "Question 2 [Buying]",
+        answer:
+          'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.',
+      },
+    ],
+  };
+  const faqsForPickup = {
+    title: "FAQs for Delievery & pickup",
+    questions: [
+      {
+        question: "Question 1 [Delievery]",
+        answer:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
+      },
+      {
+        question: "Question 2 [Delievery]",
+        answer:
+          'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC.',
+      },
+    ],
+  };
 
   useEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 961);
     window.addEventListener("resize", handleResize);
-    const chatEl = document?.querySelector(
-      "#root div .ordersummary_orderSummary__5mvm4"
-    );
-    if (chatEl) {
-      const rect = chatEl.getBoundingClientRect();
-      setChatWidth(rect.width);
-      setSidebarTop(rect.top);
-    }
-    return () => window.removeEventListener("resize", handleResize);
-    
-  }, []);
 
-  useEffect(() => {
-    if (!sidebarTop) return;
-    window.addEventListener("scroll", isSticky);
-    return () => {
-      window.removeEventListener("scroll", isSticky);
-    };
-  }, [sidebarTop]);
-  const isSticky = (e) => {
-    const chatEl = document.querySelector(
-      "#root div .ordersummary_orderSummary__5mvm4"
-    );
-    const scrollTop = window.scrollY;
-    if (scrollTop >= sidebarTop - 10) {
-      chatEl.classList.add("is-sticky");
-    } else {
-      chatEl.classList.remove("is-sticky");
-    }
-  };
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   const handleTabClick = (tabIndex) => {
     setActiveTab(tabIndex);
   };
@@ -76,19 +66,17 @@ function App() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <Header />
             {isLargeScreen ? null : (
-              <Sticky>
-                
-                <OrderSummary className={style["order-comp"]} />
-              </Sticky>
+              <OrderSummary className={style["order-comp"]} />
             )}
             <Breadcrumb />
             <h3 className={style["order-ques"]}>
               How would you like to get your order?
             </h3>
+
+            {/* ----------------------------------------- Tab panel Section------------------------------------- */}
             <div className={style["app-container"]}>
               <div className={style["tab"]}>
                 <button
-                  // className={activeTab === 1 ? `${style["tab-button active"]}` : `${style["tab-button"]}`}
                   className={`${style["tab-button"]} ${
                     activeTab === 1 ? style["active"] : ""
                   }`}
@@ -101,7 +89,6 @@ function App() {
                   className={`${style["tab-button"]} ${
                     activeTab === 2 ? style["active"] : ""
                   }`}
-                  // className={activeTab === 2 ? "tab-button active" : "tab-button"}
                   onClick={() => handleTabClick(2)}
                 >
                   <Pickup className={style["tab-icon"]} />
@@ -113,14 +100,15 @@ function App() {
                 {activeTab === 2 && <Form2 />}
               </div>
             </div>
+
+            {/* -------------------------------------------- FAQ Section --------------------------------------- */}
             <div className={style["faq-container"]}>
-              <FAQ faqs={faqs} />
+              <FAQ faqs={activeTab === 1 ? faqsForDelivery : faqsForPickup} />
             </div>
             {!isLargeScreen ? <Footer /> : null}
           </div>
         </div>
-        {isLargeScreen ? <OrderSummary isLargeScreen={isLargeScreen}  /> : null}
-        {/* style={{ width: chatWidth }} */}
+        {isLargeScreen ? <OrderSummary isLargeScreen={isLargeScreen} /> : null}
       </div>
     </>
   );
