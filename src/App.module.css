@@ -1,0 +1,21 @@
+body {
+    margin: 20px;
+    padding: 0;
+}
+@media screen and (min-width: 961px) {
+  .sidebar {
+    width: 40%
+  }
+}
+
+.is-sticky {
+  position: fixed;
+  top: 10px;
+  z-index: 999;
+  animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
+}
+
+.order-ques{
+  display: flex;
+  justify-content: center;
+}

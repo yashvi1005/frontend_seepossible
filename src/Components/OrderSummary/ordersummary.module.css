@@ -1,0 +1,97 @@
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 961px) {
+    .orderSummary {
+      width: 33%
+    }
+  }
+
+.orderSummary {
+  padding: 15px;
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0 0 20px 0;
+}
+.item-box {
+  border: solid 1px #e8e8e8;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+}
+
+.item-img-content-box {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+.item-img-box {
+  padding: 15px;
+}
+
+.item-name-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.item-price-box {
+  padding: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.total-box {
+  display: flex;
+  flex-direction: column;
+  border: solid 1px #e8e8e8;
+  padding: 15px;
+  gap: 5px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.charges-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.promo-code-input {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  border-radius: 5px;
+  width: 65%;
+}
+
+.promo-code-field {
+  border: none;
+  outline: none;
+  padding: 5px;
+  font-size: 16px;
+  background-color: #f0f0f0;
+}
+
+.promo-code-field:focus {
+  background-color: #fff;
+}
+
+.apply-button {
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+}
+.input-line {
+  border: solid 1px #e8e8e8;
+  width: 100%;
+}

@@ -1,0 +1,16 @@
+.breadcrumb {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .breadcrumb a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .breadcrumb span {
+    color: #333;
+  }
