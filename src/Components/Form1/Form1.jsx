@@ -84,8 +84,14 @@ const Form1 = () => {
   }, []);
   return (
     <>
-      <form className="deliver" onSubmit={handleSubmit}>
-        <h4 className="form-heading">Contact Information</h4>
+      <form onSubmit={handleSubmit}>
+        <div className="form-heading">
+          <h3>Contact Information</h3>
+          <h5 className="login-link">
+            Have an account? <a  href="#">Login</a>
+          </h5>
+        </div>
+        
         <div className="form-deliver">
           <input
             // title={"Email Address"}
@@ -101,7 +107,7 @@ const Form1 = () => {
           />
           {errors.email && <div className="error">{errors.email}</div>}
         </div>
-        <h4 className="form-heading">Where should we send your order ?</h4>
+        <h3 className="form-heading">Where should we send your order ?</h3>
         <div className="form-deliver">
           <div className="form-group-deliver">
             <input
@@ -202,35 +208,35 @@ const Form1 = () => {
             </select>
             {errors.region && <div className="error">{errors.region}</div>}
           </div>
-          <div style={{gap:"10px", display: "flex"}}>
-          <div className="form-group-deliver form-group-deliver--half">
-            <input
-              type="text"
-              className={`input-field ${errors.city ? "error" : ""}`}
-              placeholder="City"
-              value={city}
-              onChange={(e) => {
-                delete errors.city;
-                setErrors(errors);
-                setCity(e.target.value);
-              }}
-            />
-            {errors.city && <div className="error">{errors.city}</div>}
-          </div>
-          <div className="form-group-deliver form-group-deliver--half">
-            <input
-              type="number"
-              className={`input-field ${errors.zip ? "error" : ""}`}
-              placeholder="Zip / Postal Code"
-              value={zip}
-              onChange={(e) => {
-                delete errors.zip;
-                setErrors(errors);
-                setZip(e.target.value);
-              }}
-            />
-            {errors.zip && <div className="error">{errors.zip}</div>}
-          </div>
+          <div style={{ gap: "10px", display: "flex" }}>
+            <div className="form-group-deliver form-group-deliver--half">
+              <input
+                type="text"
+                className={`input-field ${errors.city ? "error" : ""}`}
+                placeholder="City"
+                value={city}
+                onChange={(e) => {
+                  delete errors.city;
+                  setErrors(errors);
+                  setCity(e.target.value);
+                }}
+              />
+              {errors.city && <div className="error">{errors.city}</div>}
+            </div>
+            <div className="form-group-deliver form-group-deliver--half">
+              <input
+                type="number"
+                className={`input-field ${errors.zip ? "error" : ""}`}
+                placeholder="Zip / Postal Code"
+                value={zip}
+                onChange={(e) => {
+                  delete errors.zip;
+                  setErrors(errors);
+                  setZip(e.target.value);
+                }}
+              />
+              {errors.zip && <div className="error">{errors.zip}</div>}
+            </div>
           </div>
           <div className="form-group-deliver">
             <input
@@ -266,7 +272,9 @@ const Form1 = () => {
               }}
             />
           </div>
-          {errors.phoneNumber && <div className="error">{errors.phoneNumber}</div>}
+          {errors.phoneNumber && (
+            <div className="error">{errors.phoneNumber}</div>
+          )}
 
           {/* <div className="form-group-deliver">
               <input

@@ -1,9 +1,11 @@
 import React from "react";
 import style from "./ordersummary.module.css";
 import ring from "../../Assets/ring.png";
+import Footer from "../Footer/Footer";
 
-const OrderSummary = () => {
+const OrderSummary = ({isLargeScreen}) => {
   return (
+    <>
     <div className={style["orderSummary"]}>
       <div className={style["item-box"]}>
         <div className={style["item-img-content-box"]}>
@@ -11,8 +13,8 @@ const OrderSummary = () => {
             <img src={ring} alt="ring" height="50px" width="50px"></img>
           </span>
           <span className={style["item-name-box"]}>
-            <p>Beautiful tear cluster rings</p>
-            <p>Metal: 18k Gold Metal finish: rose your size: 7</p>
+            <p className={style["item-heading"]}>Beautiful tear cluster rings</p>
+            <p className={style["item-desc"]}>Metal: 18k Gold Metal finish: rose your size: 7</p>
           </span>
         </div>
         <span className={style["item-price-box"]}>$1978</span>
@@ -20,15 +22,15 @@ const OrderSummary = () => {
 
       <div className={style["total-box"]}>
         <div className={style["charges-box"]}>
-          <p>Cart Subtotal</p>
+          <p  >Cart Subtotal</p>
           <p>$1867</p>
         </div>
         <div className={style["charges-box"]}>
-          <p>Shipping</p>
+          <p >Shipping</p>
           <p>$0</p>
         </div>
         <div className={style["charges-box"]}>
-          <p>Estimated text</p>
+          <p >Estimated text</p>
           <p>$0</p>
         </div>
         <div className={style["charges-box"]}>
@@ -52,7 +54,10 @@ const OrderSummary = () => {
           <p>$193499</p>
         </div>
       </div>
+    {isLargeScreen ? <Footer /> : null}
     </div>
+    </>
+
   );
 };
 

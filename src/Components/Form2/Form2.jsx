@@ -57,7 +57,12 @@ const Form2 = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <h4 className="form-heading">Contact Information</h4>
+      <div className="form-heading">
+          <h3>Contact Information</h3>
+          <h5 className="login-link">
+            Have an account? <a href="#">Login</a>
+          </h5>
+        </div>
         <div className="form-deliver">
           <input
             // title={"Email Address"}
