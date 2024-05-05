@@ -6,19 +6,33 @@ a {
   text-decoration: none;
 }
 
-.item-heading{
+.item-heading {
   font-weight: 600;
 }
 
-.item-desc{
-  font-size: 15px;
+.item-desc {
+  font-size: 14px;
 }
 
 @media screen and (min-width: 961px) {
-    .orderSummary {
-      width: 33%
-    }
+  .orderSummary {
+    width: 33%;
+    /* height: auto;
+    max-height: 372px !important; */
   }
+}
+@media screen and (min-width: 961px) and (max-width: 1065px)   {
+  .orderSummary {
+    height: auto;
+    max-height: 372px !important;
+  }
+}
+@media screen and (min-width: 350px) and (max-width: 456px)   {
+  .orderSummary {
+    height: auto;
+    max-height: 374px !important;
+  }
+}
 
 .orderSummary {
   padding: 15px;
@@ -28,7 +42,8 @@ a {
   gap: 10px;
   margin: 0 0 20px 0;
   z-index: 1;
-  /* position: fixed; */
+  height: auto;
+  max-height: 350px;
 }
 .item-box {
   border: solid 1px #e8e8e8;
@@ -46,7 +61,6 @@ a {
 .item-img-box {
   padding: 15px;
   align-content: center;
-
 }
 
 .item-name-box {
@@ -73,19 +87,28 @@ a {
   border-radius: 5px;
 }
 
+.total-item {
+  font-weight: 600;
+}
+
 .charges-box {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  font-size: 14px;
+}
+.total-charges-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-weight: 600;
 }
 .promo-code-input {
   display: grid;
-  /* align-items: center; */
-  /* background-color: #f0f0f0; */
   grid-template-columns: 1fr 1fr 1fr;
   border-radius: 5px;
-  /* padding: 5px 10px; */
   width: 65%;
+  border: solid 1px transparent;
 }
 
 .promo-code-field {
@@ -93,13 +116,17 @@ a {
   border: none;
   outline: none;
   padding: 5px;
-  font-size: 16px;
+  font-size: 15px;
   background-color: #f0f0f0;
-  /* transition: background-color 0.3s ease; */
+  height: 45px;
+  padding: 10px;
+  border-radius: 4px 0 0 4px;
+  box-sizing: border-box;
+  font-family: inherit;
 }
 
-.promo-code-field:focus {
-  background-color: #fff;
+.promo-code-field :focus {
+  border: #866831;
 }
 
 .apply-button {
@@ -108,6 +135,8 @@ a {
   outline: none;
   border-radius: 0 5px 5px 0;
   cursor: pointer;
+  background-color: #f0f0f0;
+  color: #000;
 }
 .input-line {
   border: solid 1px #e8e8e8;

@@ -86,7 +86,7 @@ const Form1 = () => {
     <>
       <form onSubmit={handleSubmit}>
         <div className="form-heading">
-          <h3>Contact Information</h3>
+          <h3 style={{marginBlockEnd:"auto"}}>Contact Information</h3>
           <h5 className="login-link">
             Have an account? <a  href="#">Login</a>
           </h5>
@@ -94,7 +94,6 @@ const Form1 = () => {
         
         <div className="form-deliver">
           <input
-            // title={"Email Address"}
             type="text"
             className={`input-field ${errors.email ? "error" : ""}`}
             placeholder="Email"

@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import style from "./form2.module.css";
 import "../Form2/form2.css";
 import "../Form1/form1.css";
 
@@ -58,7 +57,7 @@ const Form2 = () => {
     <>
       <form onSubmit={handleSubmit}>
       <div className="form-heading">
-          <h3>Contact Information</h3>
+          <h3 style={{marginBlockEnd:"auto"}}>Contact Information</h3>
           <h5 className="login-link">
             Have an account? <a href="#">Login</a>
           </h5>

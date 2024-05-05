@@ -33,10 +33,6 @@ function App() {
   useEffect(() => {
     const handleResize = () => setIsLargeScreen(window.innerWidth >= 961);
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  useEffect(() => {
     const chatEl = document?.querySelector(
       "#root div .ordersummary_orderSummary__5mvm4"
     );
@@ -45,8 +41,9 @@ function App() {
       setChatWidth(rect.width);
       setSidebarTop(rect.top);
     }
+    return () => window.removeEventListener("resize", handleResize);
+    
   }, []);
-  console.log(28, chatWidth, sidebarTop);
 
   useEffect(() => {
     if (!sidebarTop) return;
@@ -60,7 +57,6 @@ function App() {
       "#root div .ordersummary_orderSummary__5mvm4"
     );
     const scrollTop = window.scrollY;
-    console.log(2888, scrollTop);
     if (scrollTop >= sidebarTop - 10) {
       chatEl.classList.add("is-sticky");
     } else {
@@ -81,13 +77,14 @@ function App() {
             <Header />
             {isLargeScreen ? null : (
               <Sticky>
+                
                 <OrderSummary className={style["order-comp"]} />
               </Sticky>
             )}
             <Breadcrumb />
-            <h2 className={style["order-ques"]}>
+            <h3 className={style["order-ques"]}>
               How would you like to get your order?
-            </h2>
+            </h3>
             <div className={style["app-container"]}>
               <div className={style["tab"]}>
                 <button

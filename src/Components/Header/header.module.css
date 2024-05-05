@@ -1,10 +1,5 @@
 
 .header {
-    display: flex;
-    justify-content: center;
-  }
-  
-
-  @media screen and (min-width: 961px) {
-  }
-  
+  display: flex;
+  justify-content: center;
+}

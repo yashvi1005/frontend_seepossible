@@ -17,8 +17,8 @@ const FAQ = ({ faqs }) => {
       <div className={style["faqs-container"]}>
         <hr className={style["faqs-separator"]} />
         <div className={style["faqs-title"]}>
-          <h2 className={style["faqs-title"]}>FAQs for Buying</h2>
-          <h2 className={style["faqs-title"]}>x</h2>
+          <h3 className={style["faqs-title"]}>FAQs for Buying</h3>
+          <h3 className={style["faqs-title"]}>x</h3>
         </div>
         <hr className={style["faqs-separator"]} />
         {faqs.map((faq, index) => (

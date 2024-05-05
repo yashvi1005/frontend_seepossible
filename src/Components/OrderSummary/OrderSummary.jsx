@@ -43,13 +43,14 @@ const OrderSummary = ({isLargeScreen}) => {
             type="text"
             placeholder="Enter promo code"
             className={style["promo-code-field"]}
+            
           />
           <button type="button" className={style["apply-button"]}>
             Apply
           </button>
         </div>
         <hr className={style["input-line"]} />
-        <div className={style["charges-box"]}>
+        <div className={style["total-charges-box"]}>
           <p>Total</p>
           <p>$193499</p>
         </div>
